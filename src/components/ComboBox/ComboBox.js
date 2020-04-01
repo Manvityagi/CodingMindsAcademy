@@ -14,8 +14,6 @@ class ComboBox extends React.Component {
   getContestList = () => {
     let str;
     try {
-      // console.log("hey");
-      localStorage.setItem("aut_token", "");
       str = window.location.href.split("=")[1].split("&")[0];
     } catch {
       console.log("Catch");
@@ -29,10 +27,9 @@ class ComboBox extends React.Component {
         Accept: "application/json"
       },
       url: `${this.purl}?code=${str}`
-      // url: `${this.purl}?code=${str}`
     })
       .then(res => {
-        console.log("--------->", res);
+        // console.log("--------->", res);
         return JSON.parse(JSON.stringify(res));
       })
       .then(res => {
@@ -41,7 +38,7 @@ class ComboBox extends React.Component {
         console.log(tk);
         localStorage.setItem("aut_token", tk);
         localStorage.setItem("ref_token", rtk);
-        //before this call you can check ref token null and call this function again || iske catch me bhi kar sakti hai ye kaam
+
         axios({
           method: "get",
           url: `https://api.codechef.com/contests/?fields=&sortBy=&sortOrder=`,
@@ -58,51 +55,6 @@ class ComboBox extends React.Component {
           .catch(err => {
             console.log("NOT DONE");
             console.log(err.response);
-            axios({
-              method: "get",
-              url: `https://api.codechef.com/rankings/${this.contestCode}?fields=&country=&institution=&institutionType=&offset=&limit=&sortBy=&sortOrder=`,
-              headers: {
-                Accept: "application/json",
-                Authorization: `Bearer ${localStorage.getItem("aut_token")}`
-                // Authorization: `Bearer 2c6ef1834321a9c94ceeb957aa44675f8b1d37f5`
-              }
-            })
-              .then(res => {
-                console.log(res);
-                let rankarray = res.data.result.data.content;
-                let problems = rankarray[0].problemScore;
-                this.setState({ rankarray, problems });
-              })
-              .catch(err => {
-                console.log("NOT DONE");
-                console.log(err.response);
-                // if (localStorage.getItem("ref_token") === null) {
-                //   window.location.href = `${this.purl}`;
-                // } else {
-                //   fetch(
-                //     `${this.purl}?ref_token=${localStorage.getItem(
-                //       "ref_token"
-                //     )}`,
-                //     {
-                //       headers: {
-                //         "Content-Type": "application/x-www-form-urlencoded",
-                //         Accept: "application/json"
-                //       },
-                //       method: "GET"
-                //     }
-                //   )
-                //     .then(res => {
-                //       return res.json();
-                //     })
-                //     .then(res => {
-                //       var tk = res.access_token;
-                //       var rtk = res.refresh_token;
-                //       localStorage.setItem("aut_token", tk);
-                //       localStorage.setItem("ref_token", rtk);
-                //       this.getContestList();
-                //     });
-                // }
-              });
           });
       })
       .catch(err => {

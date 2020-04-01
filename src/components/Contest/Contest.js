@@ -151,7 +151,7 @@ class Contest extends React.Component {
         </header>
 
         <div className={classes.content}>
-          <a href={`${this.rurl}/search`} >Home </a>
+          <a href={`${this.rurl}search`} >Home </a>
           &nbsp;»&nbsp;
           <h2>Contest Page - {this.contestCode}</h2>
           {!noProblems ? (

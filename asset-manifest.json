@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/CodingMindsAcademy/static/css/main.5cdf4a41.chunk.css",
+    "main.js": "/CodingMindsAcademy/static/js/main.75c4f2b4.chunk.js",
+    "main.js.map": "/CodingMindsAcademy/static/js/main.75c4f2b4.chunk.js.map",
+    "runtime-main.js": "/CodingMindsAcademy/static/js/runtime-main.be37f1d0.js",
+    "runtime-main.js.map": "/CodingMindsAcademy/static/js/runtime-main.be37f1d0.js.map",
+    "static/js/2.346ce002.chunk.js": "/CodingMindsAcademy/static/js/2.346ce002.chunk.js",
+    "static/js/2.346ce002.chunk.js.map": "/CodingMindsAcademy/static/js/2.346ce002.chunk.js.map",
+    "index.html": "/CodingMindsAcademy/index.html",
+    "precache-manifest.6f7b5695ede2296e2a56e2cdd812a772.js": "/CodingMindsAcademy/precache-manifest.6f7b5695ede2296e2a56e2cdd812a772.js",
+    "service-worker.js": "/CodingMindsAcademy/service-worker.js",
+    "static/css/main.5cdf4a41.chunk.css.map": "/CodingMindsAcademy/static/css/main.5cdf4a41.chunk.css.map",
+    "static/js/2.346ce002.chunk.js.LICENSE.txt": "/CodingMindsAcademy/static/js/2.346ce002.chunk.js.LICENSE.txt",
+    "static/media/finalLogo.jpeg": "/CodingMindsAcademy/static/media/finalLogo.3cd0fcb7.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.be37f1d0.js",
+    "static/js/2.346ce002.chunk.js",
+    "static/css/main.5cdf4a41.chunk.css",
+    "static/js/main.75c4f2b4.chunk.js"
+  ]
+}

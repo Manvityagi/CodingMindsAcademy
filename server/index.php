@@ -76,8 +76,9 @@ function main(){
         'api_endpoint'=> 'https://api.codechef.com/',
         'authorization_code_endpoint'=> 'https://api.codechef.com/oauth/authorize',
         'access_token_endpoint'=> 'https://api.codechef.com/oauth/token',
-        'redirect_uri'=> 'http://localhost:3000/search',
-        'website_base_url' => 'http://localhost:3000/');
+        // 'redirect_uri'=> 'http://localhost:3000/search',
+        'redirect_uri' => 'https://codingmindsacademy.netlify.com/search',
+        'website_base_url' => 'https://codingmindsacademy.netlify.com/');
 
     $oauth_details = array('authorization_code' => '',
         'access_token' => '',
@@ -89,7 +90,7 @@ function main(){
         echo json_encode($oauth_details);
     }
     else
-    if(isset($_GET['ref_token'])){
+    if(isset($_GET['ref_token'])){ 
         $oauth_details['refresh_token'] = $_GET['ref_token'];
         $oauth_details = generate_access_token_from_refresh_token($config, $oauth_details);
         echo json_encode($oauth_details);

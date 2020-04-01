@@ -9,8 +9,12 @@ import ReactResizeDetector from "react-resize-detector";
 import classes from "./IDE.module.css";
 import CloseIcon from "@material-ui/icons/Close";
 import Popup from "../Popup/Popup";
+import * as nums from "../web";
+
 // import Popup from "reactjs-popup";
 class IDE extends React.Component {
+  purl = nums.default.purl;
+
   state = {
     sourceCode: "",
     language: "",
@@ -76,12 +80,10 @@ class IDE extends React.Component {
               console.log("Couldnt Run to find status - 2nd api in run");
               console.log(err);
               if (localStorage.getItem("ref_token") === null) {
-                window.location.href = `http://localhost:8000/index.php`;
+                window.location.href = `${this.purl}`;
               } else {
                 fetch(
-                  `http://localhost:8000/index.php?ref_token=${localStorage.getItem(
-                    "ref_token"
-                  )}`,
+                  `${this.purl}?ref_token=${localStorage.getItem("ref_token")}`,
                   {
                     headers: {
                       "Content-Type": "application/x-www-form-urlencoded",
@@ -108,20 +110,15 @@ class IDE extends React.Component {
         console.log("Couldn't Run 1");
         console.log(err);
         if (localStorage.getItem("ref_token") === null) {
-          window.location.href = `http://localhost:8000/index.php`;
+          window.location.href = `${this.purl}`;
         } else {
-          fetch(
-            `http://localhost:8000/index.php?ref_token=${localStorage.getItem(
-              "ref_token"
-            )}`,
-            {
-              headers: {
-                "Content-Type": "application/x-www-form-urlencoded",
-                Accept: "application/json"
-              },
-              method: "GET"
-            }
-          )
+          fetch(`${this.purl}?ref_token=${localStorage.getItem("ref_token")}`, {
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+              Accept: "application/json"
+            },
+            method: "GET"
+          })
             .then(res => {
               return res.json();
             })

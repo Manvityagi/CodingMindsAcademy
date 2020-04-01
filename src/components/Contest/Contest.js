@@ -3,6 +3,8 @@ import axios from "axios";
 import classes from "./Contest.module.css";
 import Timer from "../Timer/Timer";
 import Submissions from "../RecentSubmissions/Submissions";
+import * as nums from "../web";
+
 class Contest extends React.Component {
   state = {
     problemList: [],
@@ -13,6 +15,8 @@ class Contest extends React.Component {
   };
 
   contestCode = this.props.match.params.contest_code;
+  purl = nums.default.purl;
+  rurl = nums.default.rurl;
 
   getproblems = () => {
     axios({
@@ -38,10 +42,10 @@ class Contest extends React.Component {
         console.log("NOT DONE");
         console.log(err.response);
         if (localStorage.getItem("ref_token") === null) {
-          window.location.href = `http://localhost:8000/index.php`;
+          window.location.href = `${this.purl}`;
         } else {
           fetch(
-            `http://localhost:8000/index.php?ref_token=${localStorage.getItem(
+            `${this.purl}?ref_token=${localStorage.getItem(
               "ref_token"
             )}`,
             {
@@ -87,10 +91,10 @@ class Contest extends React.Component {
         console.log("NOT DONE");
         console.log(err.response);
         if (localStorage.getItem("ref_token") === null) {
-          window.location.href = `http://localhost:8000/index.php`;
+          window.location.href = `${this.purl}`;
         } else {
           fetch(
-            `http://localhost:8000/index.php?ref_token=${localStorage.getItem(
+            `${this.purl}?ref_token=${localStorage.getItem(
               "ref_token"
             )}`,
             {
@@ -147,7 +151,7 @@ class Contest extends React.Component {
         </header>
 
         <div className={classes.content}>
-          <a href="http://localhost:3000/search">Home </a>
+          <a href={`${this.rurl}/search`} >Home </a>
           &nbsp;»&nbsp;
           <h2>Contest Page - {this.contestCode}</h2>
           {!noProblems ? (

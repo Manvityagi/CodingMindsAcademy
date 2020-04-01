@@ -3,11 +3,13 @@ import classes from "./ComboBox.module.css";
 import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import axios from "axios";
+import * as urls from "../web";
 
 class ComboBox extends React.Component {
   state = {
     contests: []
   };
+   purl = urls.default.purl;
 
   getContestList = () => {
     let str;
@@ -17,7 +19,7 @@ class ComboBox extends React.Component {
       str = window.location.href.split("=")[1].split("&")[0];
     } catch {
       console.log("Catch");
-      window.location.href = "http://localhost:8000/";
+      window.location.href = `${this.purl}`;
     }
 
     axios({
@@ -26,7 +28,8 @@ class ComboBox extends React.Component {
         "Content-Type": "application/x-www-form-urlencoded",
         Accept: "application/json"
       },
-      url: `http://localhost:8000/index.php?code=${str}`
+      url: `${this.purl}?code=${str}`
+      // url: `${this.purl}?code=${str}`
     })
       .then(res => {
         console.log("--------->", res);
@@ -38,7 +41,7 @@ class ComboBox extends React.Component {
         console.log(tk);
         localStorage.setItem("aut_token", tk);
         localStorage.setItem("ref_token", rtk);
- //before this call you can check ref token null and call this function again || iske catch me bhi kar sakti hai ye kaam
+        //before this call you can check ref token null and call this function again || iske catch me bhi kar sakti hai ye kaam
         axios({
           method: "get",
           url: `https://api.codechef.com/contests/?fields=&sortBy=&sortOrder=`,
@@ -74,10 +77,10 @@ class ComboBox extends React.Component {
                 console.log("NOT DONE");
                 console.log(err.response);
                 // if (localStorage.getItem("ref_token") === null) {
-                //   window.location.href = `http://localhost:8000/index.php`;
+                //   window.location.href = `${this.purl}`;
                 // } else {
                 //   fetch(
-                //     `http://localhost:8000/index.php?ref_token=${localStorage.getItem(
+                //     `${this.purl}?ref_token=${localStorage.getItem(
                 //       "ref_token"
                 //     )}`,
                 //     {
@@ -106,10 +109,12 @@ class ComboBox extends React.Component {
         console.log("ERROR");
         console.log(err);
         if (localStorage.getItem("ref_token") === null) {
-          window.location.href = `http://localhost:8000/index.php`;
+          window.location.href = `${this.purl}`;
         } else {
           fetch(
-            `http://localhost:8000/index.php?ref_token=${localStorage.getItem("ref_token")}`,
+            `${this.purl}?ref_token=${localStorage.getItem(
+              "ref_token"
+            )}`,
             {
               headers: {
                 "Content-Type": "application/x-www-form-urlencoded",
@@ -137,6 +142,7 @@ class ComboBox extends React.Component {
   }
 
   render() {
+  
     return (
       <div className={classes.ComboBoxPage}>
         <header>

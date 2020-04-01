@@ -3,10 +3,14 @@ import axios from "axios";
 import IDE from "../IDE/IDE";
 import classes from "./Problem.module.css";
 import ReactHtmlParser from "react-html-parser";
+import * as urls from "../web";
+
 // const ReactMarkdown = require('react-markdown')
 // const ReactMarkdown = require('react-markdown/with-html');
 
 class Problem extends React.Component {
+  purl = urls.default.purl;
+
   state = {
     pname: "",
     pcode: "",
@@ -52,20 +56,15 @@ class Problem extends React.Component {
         console.log("NOT DONE");
         console.log(err);
         if (localStorage.getItem("ref_token") === null) {
-          window.location.href = `http://localhost:8000/index.php`;
+          window.location.href = `${this.purl}`;
         } else {
-          fetch(
-            `http://localhost:8000/index.php?ref_token=${localStorage.getItem(
-              "ref_token"
-            )}`,
-            {
-              headers: {
-                "Content-Type": "application/x-www-form-urlencoded",
-                Accept: "application/json"
-              },
-              method: "GET"
-            }
-          )
+          fetch(`${this.purl}?ref_token=${localStorage.getItem("ref_token")}`, {
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+              Accept: "application/json"
+            },
+            method: "GET"
+          })
             .then(res => {
               return res.json();
             })

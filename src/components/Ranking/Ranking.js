@@ -1,12 +1,15 @@
 import React from "react";
 import axios from "axios";
 import Demo from "../Table/Table";
+import * as urls from "../web";
 
 class Ranking extends React.Component {
   state = {
     rankarray: [],
     problems: []
   };
+  purl = urls.default.purl;
+
   contestCode = this.props.match.params.contest_code;
 
   getRankings = () => {
@@ -29,20 +32,15 @@ class Ranking extends React.Component {
         console.log("NOT DONE");
         console.log(err.response);
         if (localStorage.getItem("ref_token") === null) {
-          window.location.href = `http://localhost:8000/index.php`;
+          window.location.href = `${this.purl}`;
         } else {
-          fetch(
-            `http://localhost:8000/index.php?ref_token=${localStorage.getItem(
-              "ref_token"
-            )}`,
-            {
-              headers: {
-                "Content-Type": "application/x-www-form-urlencoded",
-                Accept: "application/json"
-              },
-              method: "GET"
-            }
-          )
+          fetch(`${this.purl}?ref_token=${localStorage.getItem("ref_token")}`, {
+            headers: {
+              "Content-Type": "application/x-www-form-urlencoded",
+              Accept: "application/json"
+            },
+            method: "GET"
+          })
             .then(res => {
               return res.json();
             })

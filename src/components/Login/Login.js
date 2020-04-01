@@ -12,7 +12,7 @@ export class Login extends Component {
           alt="CodeChef"
         />
         <Button href="http://localhost:8000" className={classes.loginButton} variant="contained" color="primary">
-          Login
+          Sign In with CodeChef
         </Button>
       </div>
     );

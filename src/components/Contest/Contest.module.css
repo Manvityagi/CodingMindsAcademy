@@ -1,0 +1,141 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+#activity {
+  margin-right: 450px;
+}
+
+.header {
+  -webkit-box-shadow: 0 8px 6px -6px black;
+  -moz-box-shadow: 0 8px 6px -6px black;
+  box-shadow: 0 8px 6px -6px black;
+  height: 90px;
+  width: 100%;
+}
+
+.himage {
+  margin-left: 12%;
+  height: 90px;
+  width: 300px;
+  /* margin-left: 350px;
+  position: relative;
+  bottom: 80px; */
+}
+
+button {
+  background-color: #2b88db;
+  color: white;
+  padding: 8px 10px;
+  box-shadow: 1px 5px 3px #888888;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005a9e;
+}
+
+.content {
+  margin-left: 12%;
+  margin-right: 25%;
+  margin-top: 5%;
+  width: 1200px;
+  height: 1500px;
+  /* background-color: rgb(228, 240, 67); */
+  box-shadow: -1px 4px 5px 6px rgb(82, 73, 73);
+  padding: 20px;
+}
+
+.tableMainHeading {
+  margin-left: 4%;
+}
+
+main {
+  display: flex;
+  justify-content: space-evenly;
+  margin-left: 4%;
+  margin-top: 2px;
+}
+/* 
+  table {
+    max-width: 100%;
+  } */
+
+tr:nth-child(odd) {
+  background-color: #eee;
+}
+tr:nth-child(even) {
+  background-color: beige;
+}
+th {
+  background-color: #555;
+  color: #fff;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.5em 1em;
+}
+.boldd {
+  margin-left: 8%;
+}
+
+.problemID {
+  cursor: pointer;
+  color: #005a9e;
+  text-decoration: underline;
+}
+
+.rightHandPage {
+  margin-top: 2px;
+  /* margin-right: 15%; */
+  width: 500px;
+  height: 1000px;
+}
+
+.submissionButton {
+  margin-top: 2%;
+  margin-left: 38%;
+  padding: 8px 10px;
+}
+.contest {
+  /* height: auto; */
+  width: 200px;
+  margin-left: 30%;
+  border: 1px solid grey;
+  box-shadow: -1px 2px 2px 2px rgb(82, 73, 73);
+  /* margin-right: 390px; */
+  /* position: relative; */
+  /* bottom: 290px; */
+}
+
+.contest1 {
+  /* margin-left: 900px; */
+  border: 1px solid grey;
+  text-align: center;
+  margin-top: 10px;
+  width: 200px;
+  margin-left: 30%;
+  box-shadow: -1px 2px 2px 2px rgb(82, 73, 73);
+  /* margin-right: 390px; */
+  /* position: relative; */
+  /* bottom: 260px; */
+  height: 120px;
+}
+
+.parent {
+  text-align: center;
+}
+
+/*//////////////////////////////////////////////////////////*/
+
+.contestYetToBeStarted {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.timer {
+  border: 1px solid grey;
+  padding: 5px;
+}

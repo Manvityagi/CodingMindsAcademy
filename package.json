@@ -1,0 +1,57 @@
+{
+  "homepage": "http://Manvityagi.github.io/CodingMindsAcademy",
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.9.7",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.46",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "ace-builds": "^1.4.8",
+    "axios": "^0.19.2",
+    "brace": "^0.11.1",
+    "fetch": "^1.1.0",
+    "mdbreact": "^4.25.4",
+    "moment": "^2.24.0",
+    "parser": "^0.1.4",
+    "react": "^16.13.1",
+    "react-ace": "^8.1.0",
+    "react-dom": "^16.13.1",
+    "react-html-parser": "^2.0.2",
+    "react-loader-spinner": "^3.1.5",
+    "react-markdown": "^4.3.1",
+    "react-promise-tracker": "^2.1.0",
+    "react-resize-detector": "^4.2.1",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.4.1",
+    "reactjs-popup": "^1.5.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "case-sensitive-paths-webpack-plugin": "^2.3.0",
+    "gh-pages": "^2.2.0"
+  }
+}

@@ -1,20 +1,20 @@
 # Introduction
 
-![](https://github.com/Manvityagi/codechef-contest/tree/master/images/landing.png)
+![](https://github.com/Manvityagi/codechef-contest/blob/master/images/Landing.png)
 
 **CodingMindsAcademy** is the gymming-area for code-enthusiasts. It's like an open-academy of coding minds where coders can come , practice, hone and show off their skills. With numerous contests and a variety of coding problems fetched through Codechef’s API, practicing here along with a community definitely can add on greatly to the problem-solving skills of a coder.
 
 ## 🚧 Technology Stack
 
 - **Backend**
-  PHP
-  Oauth2 Framework
+  - PHP
+  - Oauth2 Framework
 - **FrontEnd**
-  HTML
-  CSS
-  JavaScript
-  ReactJS
-  Material-UI
+  - HTML
+  - CSS
+  - JavaScript
+  - ReactJS
+  - Material-UI
 
 ## [VIEW LIVE DEMO](https://codingmindsacademy.netlify.com/)
 

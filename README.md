@@ -19,26 +19,26 @@
 ## [VIEW LIVE DEMO](https://codingmindsacademy.netlify.com/)
 
 ## Instructions to run the app
-# clone the repository to your local machine
-$ git clone https://github.com/<YOUR-GITHUB-USERNAME>/CodingMindsAcademy.git
+(1) Clone the repository to your local machine
+`git clone https://github.com/<YOUR-GITHUB-USERNAME>/CodingMindsAcademy.git`
 
-# navigate to the project's directory and install all the relevant dev-dependencies
-$ cd CodingMindsAcadmey && npm install
+(2) Navigate to the project's directory and install all the relevant dev-dependencies
+`cd CodingMindsAcadmey` and `npm install`
 
-# In the whole project, Replace https://codingacademyminds.000webhostapp.com/ with https://localhost:8000/ (locally run php server)
+(3) In the whole project, Replace https://codingacademyminds.000webhostapp.com/ with https://localhost:8000/ (locally run php server)
 
 
-# In the whole project, Replace https://codingmindsacademy.netlify.com/
+(4) In the whole project, Replace https://codingmindsacademy.netlify.com/
  with https://localhost:3000/ (locally run React server)
 
-# Start PHP Server
-$ cd server
-$ php -S localhost:8000
+(5) Start PHP Server
+`cd server`
+`php -S localhost:8000`
 
-# Start React Server
-$ npm start
+(6) Start React Server
+`npm start`
 
-# Visit http://localhost:3000/ in your browser
+(7) Visit http://localhost:3000/ in your browser
 
 
 
